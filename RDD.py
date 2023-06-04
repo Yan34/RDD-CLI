@@ -1,6 +1,6 @@
 import os
-from MRCNNDetector import MRCNNDetector
-from YoloV8Detector import YoloV8Detector
+from MRCNNDetector import *
+from YoloV8Detector import *
 import argparse
 
 

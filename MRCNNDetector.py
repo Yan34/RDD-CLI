@@ -1,7 +1,4 @@
-import cv2
-
-from Detector import Detector
-from pathlib import Path
+from Detector import *
 import mmdet.apis as mmapi
 
 
@@ -49,11 +46,3 @@ class MRCNNDetector(Detector):
             cv2.imshow('RDD Mask R-CNN', annotated)
             if cv2.waitKey(25) & 0xFF == ord('q'):
                 break
-
-    def detect(self, path, mode):
-        if mode == 'video':
-            self._detect_video(path)
-        elif mode == 'image':
-            self._detect_image(path)
-        else:
-            print('Режим не определён')

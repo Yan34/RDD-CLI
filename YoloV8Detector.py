@@ -1,8 +1,5 @@
-import cv2
-
-from Detector import Detector
+from Detector import *
 from ultralytics import YOLO
-from pathlib import Path
 
 
 class YoloV8Detector(Detector):
@@ -50,11 +47,3 @@ class YoloV8Detector(Detector):
             cv2.imshow("RDD YOLOv8", annotated)
             if cv2.waitKey(25) & 0xFF == ord('q'):
                 break
-
-    def detect(self, path, mode):
-        if mode == 'video':
-            self._detect_video(path)
-        elif mode == 'image':
-            self._detect_image(path)
-        else:
-            print('Режим не определён')
