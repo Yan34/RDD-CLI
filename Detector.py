@@ -1,4 +1,5 @@
 import cv2
+import filetype
 from pathlib import Path
 
 
@@ -23,9 +24,15 @@ class Detector:
     def detect(self, path, mode):
         if mode == 'video':
             print('Режим: Видео')
-            self._detect_video(path)
+            if filetype.is_video(path):
+                self._detect_video(path)
+            else:
+                print('Неверный тип файла')
         elif mode == 'image':
             print('Режим: Изображение')
-            self._detect_image(path)
+            if filetype.is_image(path):
+                self._detect_image(path)
+            else:
+                print('Неверный тип файла')
         else:
             print('Режим не определён')
