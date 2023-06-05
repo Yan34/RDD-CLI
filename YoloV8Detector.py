@@ -6,7 +6,6 @@ class YoloV8Detector(Detector):
 
     def __init__(self, checkpoint_pth: str | Path):
         super().__init__('YOLOv8')
-        # self.detect()
         self.model = self._get_model(checkpoint_pth)
 
     def _get_model(self, checkpoint_pth: str | Path):
